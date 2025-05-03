@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演艺轨迹 - 你的定制创作专家</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans SC', sans-serif; }
+        .fade-in { animation: fadeIn 0.6s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .dark .card-hover:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-purple-600 dark:text-purple-400">演艺轨迹</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">服务介绍</a>
+                    <a href="#cases" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">成功案例</a>
+                    <a href="#team" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">核心团队</a>
+                    <a href="#contact" class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">联系我们</a>
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 移动菜单 -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white dark:bg-gray-900 pt-16">
+        <div class="flex flex-col items-center space-y-8 p-8">
+            <a href="#services" class="text-xl hover:text-purple-600 dark:hover:text-purple-400">服务介绍</a>
+            <a href="#cases" class="text-xl hover:text-purple-600 dark:hover:text-purple-400">成功案例</a>
+            <a href="#team" class="text-xl hover:text-purple-600 dark:hover:text-purple-400">核心团队</a>
+            <a href="#contact" class="text-xl hover:text-purple-600 dark:hover:text-purple-400">联系我们</a>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- 英雄区 -->
+        <section class="pt-24 pb-12 px-4 min-h-screen flex items-center">
+            <div class="container mx-auto">
+                <div class="max-w-4xl mx-auto text-center fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">演艺轨迹</h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-300">你的定制创作专家</p>
+                    <p class="text-lg mb-12 text-gray-600 dark:text-gray-400">四年行业深耕，服务用户达800位，编创剧本近千部，线上指导时长600小时，线下演出编排90多场。每一个数字背后，都是我们对戏剧艺术的执着与专业。</p>
+                    
+                    <!-- 数据展示 -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">800+</div>
+                            <div class="text-gray-600 dark:text-gray-300">服务用户</div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">1000+</div>
+                            <div class="text-gray-600 dark:text-gray-300">编创剧本</div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">600</div>
+                            <div class="text-gray-600 dark:text-gray-300">线上指导时长</div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">90+</div>
+                            <div class="text-gray-600 dark:text-gray-300">线下演出编排</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#services" class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-colors">了解我们的服务</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 服务介绍 -->
+        <section id="services" class="py-20 px-4 bg-gray-100 dark:bg-gray-800">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16">实力铸就的演艺轨迹</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- 剧本编创 -->
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg card-hover">
+                        <div class="text-purple-600 dark:text-purple-400 mb-4">
+                            <i class="fas fa-pen-fancy text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">剧本编创</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">多元化创作能力</p>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                            <li><i class="fas fa-check text-purple-600 dark:text-purple-400 mr-2"></i>多种艺术类型创作全覆盖</li>
+                            <li><i class="fas fa-check text-purple-600 dark:text-purple-400 mr-2"></i>剧本类型全覆盖</li>
+                            <li><i class="fas fa-check text-purple-600 dark:text-purple-400 mr-2"></i>专业创作速度</li>
+                        </ul>
+                        <div class="mt-6 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                            <p class="text-sm text-purple-600 dark:text-purple-400">小型剧本48小时内出稿，大型舞台剧14天成稿，急速定制服务最快12小时交付</p>
+                        </div>
+                    </div>
+
+                    <!-- 线上表演指导 -->
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg card-hover">
+                        <div class="text-purple-600 dark:text-purple-400 mb-4">
+                            <i class="fas fa-video text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">线上表演指导</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">无缝衔接的远程服务</p>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                            <li><i class="fas fa-check text-purple-600 dark:text-purple-400 mr-2"></i>服务覆盖全国28个省份</li>
+                            <li><i class="fas fa-check text-purple-600 dark:text-purple-400 mr-2"></i>一对一定制课程</li>
+                            <li><i class="fas fa-check text-purple-600 dark:text-purple-400 mr-2"></i>累计600+小时在线指导</li>
+                        </ul>
+                        <div class="mt-6 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                            <p class="text-sm text-purple-600 dark:text-purple-400">突破地域限制，让专业指导无处不在</p>
+                        </div>
+                    </div>
+
+                    <!-- 线下节目编排 -->
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg card-hover">
+                        <div class="text-purple-600 dark:text-purple-400 mb-4">
+                            <i class="fas fa-theater-masks text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">线下节目编排</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">大型活动保障专家</p>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                            <li><i class="fas fa-check text-purple-600 dark:text-purple-400 mr-2"></i>成功执行大型项目30+场</li>
+                            <li><i class="fas fa-check text-purple-600 dark:text-purple-400 mr-2"></i>全流程服务体系</li>
+                            <li><i class="fas fa-check text-purple-600 dark:text-purple-400 mr-2"></i>线下编排一致好评</li>
+                        </ul>
+                        <div class="mt-6 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                            <p class="text-sm text-purple-600 dark:text-purple-400">从创意策划到彩排指导，一条龙服务</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 成功案例 -->
+        <section id="cases" class="py-20 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16">真实案例，铸就口碑</h2>
+                
+                <div class="space-y-8 max-w-4xl mx-auto">
+                    <!-- 案例一 -->
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-full mr-4">
+                                <i class="fas fa-building text-purple-600 dark:text-purple-400 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">企业年会蜕变</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">2小时完成剧本改编，一天半完成节目编排，15天后收获特等奖、约定后续合作。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm">快速响应</span>
+                            <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm">特等奖</span>
+                            <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm">长期合作</span>
+                        </div>
+                    </div>
+
+                    <!-- 案例二 -->
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-full mr-4">
+                                <i class="fas fa-graduation-cap text-purple-600 dark:text-purple-400 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">校园戏剧孵化</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">为某高校戏剧社团提供为期3个月的专业指导，从零基础培养至能独立创排演出，最终在全国的情景剧竞赛中获得一等奖、最佳创意剧目。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm">零基础教学</span>
+                            <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm">全国一等奖</span>
+                            <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm">最佳创意</span>
+                        </div>
+                    </div>
+
+                    <!-- 案例三 -->
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-full mr-4">
+                                <i class="fas fa-film text-purple-600 dark:text-purple-400 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">短剧助力自媒体创业</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">为新兴创作团队打造系列精品职场短剧，实现2个月内盈利，带货转化率高于行业平均30%。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm">快速盈利</span>
+                            <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm">高转化率</span>
+                            <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm">精品内容</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 团队介绍 -->
+        <section id="team" class="py-20 px-4 bg-gray-100 dark:bg-gray-800">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16">核心团队阵容</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center card-hover">
+                        <div class="w-20 h-20 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-pen-nib text-purple-600 dark:text-purple-400 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">专业编剧团队</h3>
+                        <p class="text-gray-600 dark:text-gray-400">4位行业老手剧作家坐镇，8位青年新锐编剧轮值</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center card-hover">
+                        <div class="w-20 h-20 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-palette text-purple-600 dark:text-purple-400 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">多元艺术团队</h3>
+                        <p class="text-gray-600 dark:text-gray-400">编导、表演、舞蹈、文学...多元专业背景为创作提供源动力</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center card-hover">
+                        <div class="w-20 h-20 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chalkboard-teacher text-purple-600 dark:text-purple-400 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">演技培训专家</h3>
+                        <p class="text-gray-600 dark:text-gray-400">覆盖台词、形体、表演三大领域的2位专业导师</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center card-hover">
+                        <div class="w-20 h-20 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-microchip text-purple-600 dark:text-purple-400 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">技术支持团队</h3>
+                        <p class="text-gray-600 dark:text-gray-400">融合AI技术与传统创作的跨界研发小组</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA区域 -->
+        <section class="py-20 px-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8">踏上你的演艺轨迹，每一个人都可以演绎！</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">没有演出经验？</h3>
+                        <p>没关系！我们已成功指导几百位零基础个人和团队完成精彩演出</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">剧本创意遇到瓶颈？</h3>
+                        <p>交给我们！创作前的咨询服务帮您打开广阔视野！</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">节目预算有限？</h3>
+                        <p>把钱花在刀刃上！从微型项目到大型活动，全方位预算规划</p>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="inline-block bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-medium transition-colors">立即开始合作</a>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section id="contact" class="py-20 px-4">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-4xl font-bold text-center mb-16">联系我们</h2>
+                
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-4">关注我们的公众号「Thespis+」</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-8">后续发放更多福利</p>
+                        
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                <i class="fas fa-file-alt text-purple-600 dark:text-purple-400 text-2xl mb-2"></i>
+                                <p>全方面专业剧本分析服务</p>
+                            </div>
+                            <div class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                <i class="fas fa-book text-purple-600 dark:text-purple-400 text-2xl mb-2"></i>
+                                <p>长期更新的编排秘籍与表演技巧</p>
+                            </div>
+                            <div class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                <i class="fas fa-broadcast-tower text-purple-600 dark:text-purple-400 text-2xl mb-2"></i>
+                                <p>每周更新的直播解惑</p>
+                            </div>
+                            <div class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                <i class="fas fa-newspaper text-purple-600 dark:text-purple-400 text-2xl mb-2"></i>
+                                <p>艺术行业的最新咨询</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <p class="text-xl font-medium text-gray-600 dark:text-gray-300">演艺轨迹——用数据说话，以作品证明，期待与您携手，共同描绘属于您的璀璨演艺轨迹！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="container mx-auto">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">作者信息</h3>
+                <p class="mb-4">作者：[作者姓名]</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="#" class="hover:text-purple-400 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-purple-400 transition-colors">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-purple-400 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                </div>
+                <p class="text-gray-400">&copy; 2024 演艺轨迹. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 主题切换
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+        });
+        
+        // 移动菜单
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 点击链接关闭移动菜单
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // 懒加载
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
